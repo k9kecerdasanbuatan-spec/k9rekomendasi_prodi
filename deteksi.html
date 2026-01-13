@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Deteksi Jurusan AI</title>
+    <link rel="stylesheet" href="css/deteksi.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- LANDING -->
+    <section class="screen" id="landing">
+        <div class="ai-card">
+            <h1>AI Career Advisor</h1>
+            <p>
+                Jawab beberapa pertanyaan singkat dan biarkan AI membantu
+                menentukan jurusan yang paling cocok untukmu.
+            </p>
+            <button onclick="mulaiAnalisis()">Mulai Sekarang</button>
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="screen hidden" id="quiz">
+        <div class="ai-card large">
+            <h2>Analisis Minat & Bakat</h2>
+            <p class="subtitle">Pilih jawaban yang paling sesuai dengan dirimu</p>
+
+            <form id="quizForm">
+
+                <div class="question">
+                    <h4>1. Aktivitas yang paling kamu nikmati?</h4>
+                    <label><input type="radio" name="q1" value="TI" required> Coding & logika</label>
+                    <label><input type="radio" name="q1" value="MN"> Mengelola bisnis</label>
+                    <label><input type="radio" name="q1" value="DKV"> Desain & visual</label>
+                    <label><input type="radio" name="q1" value="IK"> Berkomunikasi</label>
+                    <label><input type="radio" name="q1" value="SI"> Analisis sistem</label>
+                </div>
+
+                <div class="question">
+                    <h4>2. Mata pelajaran favorit?</h4>
+                    <label><input type="radio" name="q2" value="TI" required> Informatika / Matematika</label>
+                    <label><input type="radio" name="q2" value="IK"> Bahasa</label>
+                    <label><input type="radio" name="q2" value="DKV"> Seni</label>
+                    <label><input type="radio" name="q2" value="MN"> Ekonomi</label>
+                    <label><input type="radio" name="q2" value="SI"> TIK</label>
+                </div>
+
+                <div class="question">
+                    <h4>3. Kamu lebih nyaman bekerja dengan?</h4>
+                    <label><input type="radio" name="q3" value="SI" required> Data & sistem</label>
+                    <label><input type="radio" name="q3" value="IK"> Banyak orang</label>
+                    <label><input type="radio" name="q3" value="DKV"> Ide kreatif</label>
+                    <label><input type="radio" name="q3" value="MN"> Strategi bisnis</label>
+                    <label><input type="radio" name="q3" value="TI"> Logika</label>
+                </div>
+
+                <div class="question">
+                    <h4>4. Profesi impian?</h4>
+                    <label><input type="radio" name="q4" value="TI" required> Programmer</label>
+                    <label><input type="radio" name="q4" value="MN"> Entrepreneur</label>
+                    <label><input type="radio" name="q4" value="DKV"> Desainer</label>
+                    <label><input type="radio" name="q4" value="IK"> Public Speaker</label>
+                    <label><input type="radio" name="q4" value="SI"> System Analyst</label>
+                </div>
+
+                <div class="question">
+                    <h4>5. Kamu lebih tertarik pada?</h4>
+                    <label><input type="radio" name="q5" value="SI" required> Analisis & perencanaan</label>
+                    <label><input type="radio" name="q5" value="IK"> Komunikasi publik</label>
+                    <label><input type="radio" name="q5" value="DKV"> Visual & estetika</label>
+                    <label><input type="radio" name="q5" value="MN"> Bisnis</label>
+                    <label><input type="radio" name="q5" value="TI"> Teknologi</label>
+                </div>
+
+                <div class="question">
+                    <h4>6. Tujuan karier jangka panjang?</h4>
+                    <label><input type="radio" name="q6" value="TI" required> Software Engineer</label>
+                    <label><input type="radio" name="q6" value="MN"> Pebisnis</label>
+                    <label><input type="radio" name="q6" value="DKV"> Creative Director</label>
+                    <label><input type="radio" name="q6" value="IK"> Konsultan Komunikasi</label>
+                    <label><input type="radio" name="q6" value="SI"> IT Consultant</label>
+                </div>
+
+                <button type="button" onclick="hitungJurusan()">🔍 Proses AI</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- HASIL -->
+    <section class="screen hidden" id="hasil">
+        <div class="ai-card large">
+            <h2>Hasil Analisis AI</h2>
+
+            <div class="result" id="result"></div>
+
+            <canvas id="kurvaAI" width="520" height="260"></canvas>
+
+            <button onclick="kembaliKeQuiz()">Ulangi Analisis</button>
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
